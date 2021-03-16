@@ -8,8 +8,24 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     overflow-x: hidden;
+    
+}
+
+#menu {
+    width: 500px;
+    height: 500px;
+    background-color: #03a9f4;
+    position: fixed;
+    top: 0;
+    left: -500px;
     transform-origin: top left;
     transition: transform 0.4s linear;
+}
+
+#menu-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 main {
@@ -19,14 +35,16 @@ main {
     
 }
 
-body.active {
-    transform: rotate(-12deg);
-    
-    
+article img {
+    max-width: 100%;
+}
+
+#menu.active {
+    transform: rotate(-12deg);    
 }
 
 #open-close.active {
-    transform: rotate(-78deg);
+    transform: rotate(-90deg);
     
 }
 
@@ -39,9 +57,10 @@ article {
 }
 
 nav {
-    position: fixed;
+    position: absolute;
+    width: 150px;
     bottom: 50px;
-    left: -180px;
+    right: 30px;
     transform: rotate(12deg);
 }
 nav ul li {
@@ -60,11 +79,12 @@ nav ul li i {
     top: -100px;
     left: -100px;
     transition: transform 0.4s linear;
+    z-index: 1;
 }
 #oc-inner {    
     width: 200px;
     height: 200px;
-    background-color: blue;
+    background-color: #1111a7;
     position:relative;
     border-radius: 50%;
 }
@@ -89,5 +109,20 @@ button:focus {
 }
 button {
     cursor: pointer;
+}
+
+@media (max-width: 980px) {
+    nav {
+        width: 120px;
+        bottom: 10px;
+        right: 10px;
+    }
+    nav ul li {
+        font-size: 12px;
+    }
+    nav ul li i {
+        width: 25px;
+        font-size: 16px;
+    } 
 }
 
