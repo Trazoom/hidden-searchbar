@@ -6,11 +6,88 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: hidden;
     margin: 0;
+    overflow-x: hidden;
+    transform-origin: top left;
+    transition: transform 0.4s linear;
 }
+
+main {
+    background-color: #333;
+    min-height: 50vw;
+    padding: 100px 0;
+    
+}
+
+body.active {
+    transform: rotate(-12deg);
+    
+    
+}
+
+#open-close.active {
+    transform: rotate(-78deg);
+    
+}
+
+article {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    background: #fafafa;
+    padding: 50px;
+}
+
+nav {
+    position: fixed;
+    bottom: 50px;
+    left: -180px;
+    transform: rotate(12deg);
+}
+nav ul li {
+    color: #000;
+    list-style-type: none;
+    padding: 10px 0;
+    text-transform: uppercase;
+}
+nav ul li i {
+    width: 30px;
+    font-size: 20px;
+    padding-right: 10px;
+}
+#open-close {
+    position: fixed;
+    top: -100px;
+    left: -100px;
+    transition: transform 0.4s linear;
+}
+#oc-inner {    
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+    position:relative;
+    border-radius: 50%;
+}
+#open, #close {
+    position: absolute;
+    right: 25%;
+    bottom: 20%;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+}
+
+#open {
+    right: 20%;
+}
+
+#close {
+    left: 20%;
+}
+button:focus {
+    outline: none;
+}
+button {
+    cursor: pointer;
+}
+
